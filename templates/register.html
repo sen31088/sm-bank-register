@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block y %}
+
+<div class="login-form">
+  <!--- <form method="post"> --->
+    <form action="/register" method="post">
+      <!-- <div class="msg" align="center"><strong>{{ msg1 }}</strong></div> -->
+      {% if msg1 %}
+      <div align="center" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{ msg1 }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endif %}
+    <br>
+    <h2 align = 'center'>Account Registration</h2>
+    <img src="/static/sm-logo-blue .png">
+    <br>
+    <br>
+    <div class="content">
+      <div class="input-field">
+        <div class="input-icons">
+          <i class="fa fa-user icon"></i>
+          </div>
+        <input type="Name" name="username" placeholder="UserName" autocomplete="nope" value="{{username}}">
+      </div>
+      <div class="input-field">
+        <div class="input-icons">
+          <i class="fa fa-user icon"></i>
+          </div>
+        <input type="Name" name="fullname" placeholder="Full Name" autocomplete="nope" value="{{fullname}}">
+      </div>
+      <div class="input-field">
+          <div class="input-icons">
+            <i class="fa fa-lock icon"></i>
+            </div>
+        <input type="password" name="password1" placeholder="Password" autocomplete="new-password">
+      </div>
+      <div class="input-field">
+          <div class="input-icons">
+            <i class="fa fa-lock icon"></i>
+            </div>
+        <input type="password" name="password2" placeholder="Re-Enter Password" autocomplete="new-password">
+      </div>
+      <div class="input-field">
+        <div class="input-icons">
+          <i class="fa fa-envelope icon"></i>
+          </div>
+        <input type="email" name="email" placeholder="Email" autocomplete="nope" value="{{email}}">
+      </div>
+    </div>
+
+    <div class="action ">
+      
+      <button type="submit" formaction="/user_register" >Register</button>
+      <button formaction="/" CausesValidation="false" type="submit"  >SignIn</button>
+      
+    </div>
+
+  </form>
+  
+</div>
+<!-- partial -->
+  <script  src="/static/script.js"></script>
+  <script>
+    function myFunction() {
+      alert("User Registration sucess, Please login");
+    }
+    </script>
+
+{% endblock %}
+
+</body>
+</html>

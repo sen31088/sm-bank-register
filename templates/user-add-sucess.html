@@ -1,0 +1,63 @@
+{% extends "admin_layout.html" %}
+
+{% block y %}
+{% if session.name %}
+  <style>
+    .divback {
+    border-radius: 10px;
+    background-color: #f5f6f8;
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  </style>
+  
+      <div class="divback">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      <div class="sucess">
+         <img src="/static/tick.png">
+         <h2>Details of Account Created </h2>
+         <h4><br>Login ID: {{user_id}} <br> Account Name: {{accname}} <br> {{message}}</h4>
+         <button type="button" a href="/user-details" class="btn"  onclick="window.location.href='/user-details'">OK</button>
+        </div>
+    
+      </div>
+     </div> 
+  </div>
+<!-- partial -->
+  <script  src="/static/script.js"></script>
+  <script>
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
+{% else %}
+<meta http-equiv="refresh" content="2 ; url =/login" /> 
+	You are not Register. <a href="/login">login</a>.
+{% endif %}
+{% endblock %}
